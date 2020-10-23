@@ -3,6 +3,7 @@ require('./bootstrap');
 import { App, plugin } from '@inertiajs/inertia-vue';
 import Vue from 'vue';
 import { InertiaProgress } from '@inertiajs/progress';
+import Layout from './components/Layout'
 
 Vue.use(plugin);
 InertiaProgress.init({
@@ -27,7 +28,13 @@ new Vue({
 		h(App, {
 			props: {
 				initialPage: JSON.parse(el.dataset.page),
-				resolveComponent: (name) => require(`./Pages/${name}`).default
+                resolveComponent: name => import(`./Pages/${name}`)
+                .then(({ default: page }) => {
+                  if (page.layout === undefined && !name.startsWith('Public/')) {
+                    page.layout = Layout
+                  }
+                  return page
+                }),
 			}
 		})
 }).$mount(el);
