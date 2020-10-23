@@ -22952,7 +22952,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", [
+    _c("h1", { staticClass: "text-blue-500" }, [
       _vm._v(
         "Hello, " + _vm._s(_vm.name) + ", Your Email: " + _vm._s(_vm.email)
       )

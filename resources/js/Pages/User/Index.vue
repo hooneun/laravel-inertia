@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h1>Hello, {{ name }}, Your Email: {{ email }}</h1>
+    <h1 class="text-blue-500">Hello, {{ name }}, Your Email: {{ email }}</h1>
 </div>
 </template>
 <script>
