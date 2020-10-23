@@ -35285,6 +35285,14 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./Post/Create": [
+		"./resources/js/Pages/Post/Create.vue",
+		2
+	],
+	"./Post/Create.vue": [
+		"./resources/js/Pages/Post/Create.vue",
+		2
+	],
 	"./Post/Index": [
 		"./resources/js/Pages/Post/Index.vue",
 		0

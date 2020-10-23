@@ -16,8 +16,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['posts']
+  props: ["posts"]
 });
 
 /***/ }),
@@ -39,18 +41,29 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    _vm._l(_vm.posts, function(post, index) {
-      return _c("div", { key: index }, [
-        _vm._v(
-          "\n        " +
-            _vm._s(post.title) +
-            " - " +
-            _vm._s(post.body) +
-            "\n    "
-        )
-      ])
-    }),
-    0
+    [
+      _vm._l(_vm.posts, function(post, index) {
+        return _c("div", { key: index }, [
+          _vm._v(
+            "\n    " + _vm._s(post.title) + " - " + _vm._s(post.body) + "\n  "
+          )
+        ])
+      }),
+      _vm._v(" "),
+      _c(
+        "inertia-link",
+        {
+          attrs: {
+            href: "/posts/create",
+            method: "get",
+            as: "button",
+            type: "button"
+          }
+        },
+        [_vm._v("Create")]
+      )
+    ],
+    2
   )
 }
 var staticRenderFns = []

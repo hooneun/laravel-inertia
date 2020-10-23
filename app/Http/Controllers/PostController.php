@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class PostController extends Controller
@@ -27,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Post/Create');
     }
 
     /**
@@ -38,7 +39,14 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+
+        $post = Post::create($request->all());
+
+        return Redirect::route('posts.index');
     }
 
     /**
