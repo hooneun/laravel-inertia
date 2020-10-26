@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
@@ -44,7 +45,7 @@ class PostController extends Controller
             'body' => 'required',
         ]);
 
-        $post = Post::create($request->all());
+        $post = Auth::user()->posts()->create($request->all());
 
         return Redirect::route('posts.index');
     }

@@ -3915,6 +3915,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     title: String
@@ -23092,6 +23093,10 @@ var render = function() {
         _vm._v(" "),
         _c("inertia-link", { attrs: { href: "/posts" } }, [_vm._v("Post")]),
         _vm._v(" "),
+        _c("inertia-link", { attrs: { href: "/auth/login" } }, [
+          _vm._v("Sign In")
+        ]),
+        _vm._v(" "),
         _c("inertia-link", { attrs: { href: "/users/create" } }, [
           _vm._v("Sign Up")
         ])
@@ -35290,37 +35295,45 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./Auth/Login": [
+		"./resources/js/Pages/Auth/Login.vue",
+		0
+	],
+	"./Auth/Login.vue": [
+		"./resources/js/Pages/Auth/Login.vue",
+		0
+	],
 	"./Post/Create": [
 		"./resources/js/Pages/Post/Create.vue",
-		0
+		1
 	],
 	"./Post/Create.vue": [
 		"./resources/js/Pages/Post/Create.vue",
-		0
+		1
 	],
 	"./Post/Index": [
 		"./resources/js/Pages/Post/Index.vue",
-		1
+		2
 	],
 	"./Post/Index.vue": [
 		"./resources/js/Pages/Post/Index.vue",
-		1
+		2
 	],
 	"./User/Create": [
 		"./resources/js/Pages/User/Create.vue",
-		2
+		3
 	],
 	"./User/Create.vue": [
 		"./resources/js/Pages/User/Create.vue",
-		2
+		3
 	],
 	"./User/Index": [
 		"./resources/js/Pages/User/Index.vue",
-		3
+		4
 	],
 	"./User/Index.vue": [
 		"./resources/js/Pages/User/Index.vue",
-		3
+		4
 	]
 };
 function webpackAsyncContext(req) {

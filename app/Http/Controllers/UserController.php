@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Symfony\Component\HttpFoundation\Response;
@@ -50,6 +51,7 @@ class UserController extends Controller
             'password' => 'required',
         ]);
 
+        $request->password = Hash::make($request->password);
         $user = User::create($request->all());
 
         return Redirect::route('users.index');
