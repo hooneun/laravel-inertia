@@ -51,8 +51,11 @@ class UserController extends Controller
             'password' => 'required',
         ]);
 
-        $request->password = Hash::make($request->password);
-        $user = User::create($request->all());
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
         return Redirect::route('users.index');
     }
