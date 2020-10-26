@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [UserController::class, 'index']);
 
 Route::resource('/users', UserController::class);
 Route::resource('/posts', PostController::class);

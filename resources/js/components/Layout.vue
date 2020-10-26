@@ -1,27 +1,28 @@
 <template>
-<main>
+  <main>
     <header>
-        <inertia-link href="/users">Home</inertia-link>
-        <inertia-link href="/posts">Post</inertia-link>
+      <inertia-link href="/users">Home</inertia-link>
+      <inertia-link href="/posts">Post</inertia-link>
+      <inertia-link href="/users/create">Sign Up</inertia-link>
     </header>
     <article>
-        <slot />
+      <slot />
     </article>
-</main>
+  </main>
 </template>
 
 <script>
 export default {
-    props: {
-        title: String,
+  props: {
+    title: String,
+  },
+  watch: {
+    title: {
+      immediate: true,
+      handler(title) {
+        document.title = title;
+      },
     },
-    watch: {
-        title: {
-            immediate: true,
-            handler(title) {
-                document.title = title
-            }
-        }
-    }
-}
+  },
+};
 </script>

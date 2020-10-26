@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
+use Symfony\Component\HttpFoundation\Response;
 
 class UserController extends Controller
 {
@@ -31,7 +33,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('User/Create');
     }
 
     /**
@@ -42,7 +44,15 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $user = User::create($request->all());
+
+        return Redirect::route('users.index');
     }
 
     /**
