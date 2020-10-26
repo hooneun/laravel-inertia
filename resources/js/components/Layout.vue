@@ -3,8 +3,15 @@
     <header>
       <inertia-link href="/users">Home</inertia-link>
       <inertia-link href="/posts">Post</inertia-link>
-      <inertia-link href="/auth/login">Sign In</inertia-link>
-      <inertia-link href="/users/create">Sign Up</inertia-link>
+      <inertia-link href="/auth/login" :class="{ hidden: isLoggedIn }"
+        >Sign In</inertia-link
+      >
+      <inertia-link href="/users/create" :class="{ hidden: isLoggedIn }"
+        >Sign Up</inertia-link
+      >
+      <inertia-link href="/auth/logout" method="post" as="button" type="button"
+        >Sign Out</inertia-link
+      >
     </header>
     <article>
       <slot />
@@ -23,6 +30,11 @@ export default {
       handler(title) {
         document.title = title;
       },
+    },
+  },
+  computed: {
+    isLoggedIn() {
+      return this.$page.props.isLoggedIn;
     },
   },
 };

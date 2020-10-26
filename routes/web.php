@@ -20,7 +20,8 @@ Route::get('/', [UserController::class, 'index']);
 
 Route::group(['prefix' => 'auth'], function () {
     Route::get('/login', [AuthController::class, 'show']);
-    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 });
 
 Route::resource('/users', UserController::class);

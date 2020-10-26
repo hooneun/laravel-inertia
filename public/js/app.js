@@ -3916,6 +3916,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     title: String
@@ -3926,6 +3933,11 @@ __webpack_require__.r(__webpack_exports__);
       handler: function handler(title) {
         document.title = title;
       }
+    }
+  },
+  computed: {
+    isLoggedIn: function isLoggedIn() {
+      return this.$page.props.isLoggedIn;
     }
   }
 });
@@ -23093,13 +23105,33 @@ var render = function() {
         _vm._v(" "),
         _c("inertia-link", { attrs: { href: "/posts" } }, [_vm._v("Post")]),
         _vm._v(" "),
-        _c("inertia-link", { attrs: { href: "/auth/login" } }, [
-          _vm._v("Sign In")
-        ]),
+        _c(
+          "inertia-link",
+          { class: { hidden: _vm.isLoggedIn }, attrs: { href: "/auth/login" } },
+          [_vm._v("Sign In")]
+        ),
         _vm._v(" "),
-        _c("inertia-link", { attrs: { href: "/users/create" } }, [
-          _vm._v("Sign Up")
-        ])
+        _c(
+          "inertia-link",
+          {
+            class: { hidden: _vm.isLoggedIn },
+            attrs: { href: "/users/create" }
+          },
+          [_vm._v("Sign Up")]
+        ),
+        _vm._v(" "),
+        _c(
+          "inertia-link",
+          {
+            attrs: {
+              href: "/auth/logout",
+              method: "post",
+              as: "button",
+              type: "button"
+            }
+          },
+          [_vm._v("Sign Out")]
+        )
       ],
       1
     ),

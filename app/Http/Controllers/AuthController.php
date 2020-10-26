@@ -23,6 +23,13 @@ class AuthController extends Controller
         return Redirect::route('users.index');
     }
 
+    public function logout()
+    {
+        Auth::logout();
+
+        return Redirect::route('auth.login');
+    }
+
     public function show()
     {
         return Inertia::render('Auth/Login');
