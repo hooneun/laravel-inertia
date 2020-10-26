@@ -24,14 +24,6 @@ export default {
   props: {
     title: String,
   },
-  watch: {
-    title: {
-      immediate: true,
-      handler(title) {
-        document.title = title;
-      },
-    },
-  },
   computed: {
     isLoggedIn() {
       return this.$page.props.isLoggedIn;

@@ -18,13 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        // $data = User::all();
-        $data = [
-            'name' => 'test',
-            'email' => 'test@test.com',
-        ];
-
-        return Inertia::render('User/Index', $data);
+        return Inertia::render('User/Index');
     }
 
     /**

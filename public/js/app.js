@@ -3927,14 +3927,6 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     title: String
   },
-  watch: {
-    title: {
-      immediate: true,
-      handler: function handler(title) {
-        document.title = title;
-      }
-    }
-  },
   computed: {
     isLoggedIn: function isLoggedIn() {
       return this.$page.props.isLoggedIn;
@@ -35343,29 +35335,37 @@ var map = {
 		"./resources/js/Pages/Post/Create.vue",
 		1
 	],
+	"./Post/Edit": [
+		"./resources/js/Pages/Post/Edit.vue",
+		2
+	],
+	"./Post/Edit.vue": [
+		"./resources/js/Pages/Post/Edit.vue",
+		2
+	],
 	"./Post/Index": [
 		"./resources/js/Pages/Post/Index.vue",
-		2
+		3
 	],
 	"./Post/Index.vue": [
 		"./resources/js/Pages/Post/Index.vue",
-		2
+		3
 	],
 	"./User/Create": [
 		"./resources/js/Pages/User/Create.vue",
-		3
+		4
 	],
 	"./User/Create.vue": [
 		"./resources/js/Pages/User/Create.vue",
-		3
+		4
 	],
 	"./User/Index": [
 		"./resources/js/Pages/User/Index.vue",
-		4
+		5
 	],
 	"./User/Index.vue": [
 		"./resources/js/Pages/User/Index.vue",
-		4
+		5
 	]
 };
 function webpackAsyncContext(req) {

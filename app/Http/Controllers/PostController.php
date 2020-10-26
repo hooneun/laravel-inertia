@@ -46,7 +46,7 @@ class PostController extends Controller
             'body' => 'required',
         ]);
 
-        $post = Auth::user()->posts()->create($request->all());
+        $post = Auth::user()->posts()->create($request->only('title', 'body'));
 
         return Redirect::route('posts.index');
     }
@@ -70,7 +70,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return Inertia::render('Post/Edit', compact('post'));
     }
 
     /**
@@ -82,7 +82,17 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $this->authorize('update', $post);
+
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+
+        $post->update($request->all());
+
+        return Redirect::route('posts.index');
+
     }
 
     /**
@@ -93,6 +103,10 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $this->authorize('delete', $post);
+
+        $post->delete();
+
+        return Redirect::route('posts.index');
     }
 }
