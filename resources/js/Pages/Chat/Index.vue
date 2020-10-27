@@ -37,7 +37,6 @@ export default {
     },
     chatConnect() {
       Echo.private("chat").listen("MessageSent", (e) => {
-        console.log(e);
         this.messages.push({
           message: e.message.message,
           user: e.user,
@@ -47,7 +46,7 @@ export default {
   },
   created() {
     this.fetchMessages();
-    this.chatConnect();
+    // this.chatConnect();
   },
 };
 </script>

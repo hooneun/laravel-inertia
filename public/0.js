@@ -55,8 +55,6 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       Echo["private"]("chat").listen("MessageSent", function (e) {
-        console.log(e);
-
         _this2.messages.push({
           message: e.message.message,
           user: e.user
@@ -65,8 +63,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
-    this.fetchMessages();
-    this.chatConnect();
+    this.fetchMessages(); // this.chatConnect();
   }
 });
 
