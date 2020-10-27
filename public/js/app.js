@@ -3923,6 +3923,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     title: String
@@ -29202,6 +29205,12 @@ var render = function() {
         _c("inertia-link", { attrs: { href: "/users" } }, [_vm._v("Home")]),
         _vm._v(" "),
         _c("inertia-link", { attrs: { href: "/posts" } }, [_vm._v("Post")]),
+        _vm._v(" "),
+        _c(
+          "inertia-link",
+          { class: { hidden: !_vm.isLoggedIn }, attrs: { href: "/chats" } },
+          [_vm._v("Chat")]
+        ),
         _vm._v(" "),
         _c(
           "inertia-link",

@@ -3,6 +3,9 @@
     <header>
       <inertia-link href="/users">Home</inertia-link>
       <inertia-link href="/posts">Post</inertia-link>
+      <inertia-link href="/chats" :class="{ hidden: !isLoggedIn }"
+        >Chat</inertia-link
+      >
       <inertia-link href="/auth/login" :class="{ hidden: isLoggedIn }"
         >Sign In</inertia-link
       >
