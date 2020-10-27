@@ -2,6 +2,7 @@
 
 use App\Events\TestEvent;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChatsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,12 @@ Route::group(['prefix' => 'auth'], function () {
 
 Route::resource('/users', UserController::class);
 Route::resource('/posts', PostController::class);
+
+Route::group(['prefix' => 'chats', 'middleware' => 'auth'], function () {
+    Route::get('/', [ChatsController::class, 'index']);
+    Route::get('/messages', [ChatsController::class, 'fetchMessage']);
+    Route::post('/messages', [ChatsController::class, 'sendMessage']);
+});
 
 Route::get('/broadcast', function () {
     broadcast(new TestEvent);

@@ -30,10 +30,10 @@ export default {
     },
   },
   mounted() {
-    console.log(Echo);
-    Echo.channel("TestEvent").listen("TestEvent", (e) => {
-      console.log(e);
-    });
+    // console.log(Echo);
+    // Echo.channel("TestEvent").listen("TestEvent", (e) => {
+    //   console.log(e);
+    // });
   },
 };
 </script>

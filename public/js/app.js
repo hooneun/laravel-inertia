@@ -3932,11 +3932,10 @@ __webpack_require__.r(__webpack_exports__);
       return this.$page.props.isLoggedIn;
     }
   },
-  mounted: function mounted() {
-    console.log(Echo);
-    Echo.channel("TestEvent").listen("TestEvent", function (e) {
-      console.log(e);
-    });
+  mounted: function mounted() {// console.log(Echo);
+    // Echo.channel("TestEvent").listen("TestEvent", (e) => {
+    //   console.log(e);
+    // });
   }
 });
 
@@ -41434,6 +41433,14 @@ var map = {
 		"./resources/js/Pages/Auth/Login.vue",
 		0
 	],
+	"./Chat/Index": [
+		"./resources/js/Pages/Chat/Index.vue",
+		6
+	],
+	"./Chat/Index.vue": [
+		"./resources/js/Pages/Chat/Index.vue",
+		6
+	],
 	"./Post/Create": [
 		"./resources/js/Pages/Post/Create.vue",
 		1
@@ -41513,7 +41520,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_progress__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/progress */ "./node_modules/@inertiajs/progress/dist/index.js");
 /* harmony import */ var _inertiajs_progress__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_inertiajs_progress__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Layout */ "./resources/js/components/Layout.vue");
+/* harmony import */ var laravel_echo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! laravel-echo */ "./node_modules/laravel-echo/dist/echo.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
 
