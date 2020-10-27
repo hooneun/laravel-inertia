@@ -3926,6 +3926,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     title: String
@@ -29199,49 +29205,55 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("main", [
-    _c(
-      "header",
-      [
-        _c("inertia-link", { attrs: { href: "/users" } }, [_vm._v("Home")]),
-        _vm._v(" "),
-        _c("inertia-link", { attrs: { href: "/posts" } }, [_vm._v("Post")]),
-        _vm._v(" "),
-        _c(
-          "inertia-link",
-          { class: { hidden: !_vm.isLoggedIn }, attrs: { href: "/chats" } },
-          [_vm._v("Chat")]
-        ),
-        _vm._v(" "),
-        _c(
-          "inertia-link",
-          { class: { hidden: _vm.isLoggedIn }, attrs: { href: "/auth/login" } },
-          [_vm._v("Sign In")]
-        ),
-        _vm._v(" "),
-        _c(
-          "inertia-link",
-          {
-            class: { hidden: _vm.isLoggedIn },
-            attrs: { href: "/users/create" }
-          },
-          [_vm._v("Sign Up")]
-        ),
-        _vm._v(" "),
-        _c(
-          "inertia-link",
-          {
-            attrs: {
-              href: "/auth/logout",
-              method: "post",
-              as: "button",
-              type: "button"
-            }
-          },
-          [_vm._v("Sign Out")]
-        )
-      ],
-      1
-    ),
+    _c("nav", { staticClass: "bg-gray-800" }, [
+      _c(
+        "div",
+        { staticClass: "flex items-center justify-between h-16" },
+        [
+          _c("inertia-link", { attrs: { href: "/users" } }, [_vm._v("Home")]),
+          _vm._v(" "),
+          _c("inertia-link", { attrs: { href: "/posts" } }, [_vm._v("Post")]),
+          _vm._v(" "),
+          _c(
+            "inertia-link",
+            { class: { hidden: !_vm.isLoggedIn }, attrs: { href: "/chats" } },
+            [_vm._v("Chat")]
+          ),
+          _vm._v(" "),
+          _c(
+            "inertia-link",
+            {
+              class: { hidden: _vm.isLoggedIn },
+              attrs: { href: "/auth/login" }
+            },
+            [_vm._v("Sign In")]
+          ),
+          _vm._v(" "),
+          _c(
+            "inertia-link",
+            {
+              class: { hidden: _vm.isLoggedIn },
+              attrs: { href: "/users/create" }
+            },
+            [_vm._v("Sign Up")]
+          ),
+          _vm._v(" "),
+          _c(
+            "inertia-link",
+            {
+              attrs: {
+                href: "/auth/logout",
+                method: "post",
+                as: "button",
+                type: "button"
+              }
+            },
+            [_vm._v("Sign Out")]
+          )
+        ],
+        1
+      )
+    ]),
     _vm._v(" "),
     _c("article", [_vm._t("default")], 2)
   ])
@@ -41436,59 +41448,59 @@ module.exports = function(module) {
 var map = {
 	"./Auth/Login": [
 		"./resources/js/Pages/Auth/Login.vue",
-		0
+		1
 	],
 	"./Auth/Login.vue": [
 		"./resources/js/Pages/Auth/Login.vue",
-		0
+		1
 	],
 	"./Chat/Index": [
 		"./resources/js/Pages/Chat/Index.vue",
-		6
+		0
 	],
 	"./Chat/Index.vue": [
 		"./resources/js/Pages/Chat/Index.vue",
-		6
+		0
 	],
 	"./Post/Create": [
 		"./resources/js/Pages/Post/Create.vue",
-		1
+		2
 	],
 	"./Post/Create.vue": [
 		"./resources/js/Pages/Post/Create.vue",
-		1
+		2
 	],
 	"./Post/Edit": [
 		"./resources/js/Pages/Post/Edit.vue",
-		2
+		3
 	],
 	"./Post/Edit.vue": [
 		"./resources/js/Pages/Post/Edit.vue",
-		2
+		3
 	],
 	"./Post/Index": [
 		"./resources/js/Pages/Post/Index.vue",
-		3
+		4
 	],
 	"./Post/Index.vue": [
 		"./resources/js/Pages/Post/Index.vue",
-		3
+		4
 	],
 	"./User/Create": [
 		"./resources/js/Pages/User/Create.vue",
-		4
+		5
 	],
 	"./User/Create.vue": [
 		"./resources/js/Pages/User/Create.vue",
-		4
+		5
 	],
 	"./User/Index": [
 		"./resources/js/Pages/User/Index.vue",
-		5
+		6
 	],
 	"./User/Index.vue": [
 		"./resources/js/Pages/User/Index.vue",
-		5
+		6
 	]
 };
 function webpackAsyncContext(req) {
