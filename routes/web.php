@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\TestEvent;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
@@ -26,3 +27,7 @@ Route::group(['prefix' => 'auth'], function () {
 
 Route::resource('/users', UserController::class);
 Route::resource('/posts', PostController::class);
+
+Route::get('/broadcast', function () {
+    broadcast(new TestEvent);
+});

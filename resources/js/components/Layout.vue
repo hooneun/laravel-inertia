@@ -29,5 +29,11 @@ export default {
       return this.$page.props.isLoggedIn;
     },
   },
+  mounted() {
+    console.log(Echo);
+    Echo.channel("TestEvent").listen("TestEvent", (e) => {
+      console.log(e);
+    });
+  },
 };
 </script>
